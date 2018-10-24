@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for (var i = 0; i < anchors.length; i++) {
             var hostname = go_get_host_name(anchors[i].getAttribute("href"));
             if (hostname.length > 0 && shorten_includ.indexOf(hostname) > -1) {
-                anchors[i].href = go_url + "link.php/?user=" + encodeURIComponent(user) + "&url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
+                anchors[i].href = go_url + "?url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
             } else {
                 if (anchors[i].protocol === "magnet:") {
-                    anchors[i].href = go_url + "link.php/?user=" + encodeURIComponent(user) + "&url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
+                    anchors[i].href = go_url + "?url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
                 }
             }
         }
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for (var i = 0; i < anchors.length; i++) {
             var hostname = go_get_host_name(anchors[i].getAttribute("href"));
             if (hostname.length > 0 && shorten_exclude.indexOf(hostname) === -1) {
-                anchors[i].href = go_url + "link.php/?user=" + encodeURIComponent(user) + "&url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
+                anchors[i].href = go_url + "?url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
             } else {
                 if (anchors[i].protocol === "magnet:") {
-                    anchors[i].href = go_url + "link.php/?user=" + encodeURIComponent(user) + "&url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
+                    anchors[i].href = go_url + "?url=" + encodeURIComponent(anchors[i].href) + "&type=" + encodeURIComponent(advert_type)
                 }
             }
         }
